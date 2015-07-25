@@ -49,7 +49,8 @@ PKG_CONFIG_PATH="${XPYTHON}/lib/pkgconfig" \
   LDFLAGS="${LDFLAGS:-} -Wl,-rpath,/mnt/DroboFS/Share/DroboApps/python2/lib -L${XPYTHON}/lib" \
   "${XPYTHON}/bin/python" setup.py \
     build_ext -lrt --include-dirs="${XPYTHON}/include" --library-dirs="${XPYTHON}/lib" --force \
-    build --executable="/mnt/DroboFS/Share/DroboApps/python2/bin/python" --force \
+    build --force \
+    build_scripts --executable="/mnt/DroboFS/Share/DroboApps/python2/bin/python" --force \
     bdist_egg --dist-dir "${BASE}" \
     --with-xslt-config="${DEPS}/bin/xslt-config"
 popd
